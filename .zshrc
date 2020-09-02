@@ -1,139 +1,231 @@
-# If you come from bash you might have to change your $PATH.
+# I fyou come from bash you might have to change your $PATH.
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/david/.oh-my-zsh"
 export EDITOR=emacsclient
-export PATH="$PATH:/home/david/flutter/flutter/bin"
-export PATH="$PATH:/home/david/Downloads/android-studio/bin/studio.sh"
 
+export PATH="$PATH:/home/david/google/flutter/bin"
+export PATH="$PATH:/home/david/Downloads/swift-5.2.5-RELEASE-ubuntu18.04/usr/bin"
+
+export EDITOR=emacsclient
+#Export node path
+export PATH=$PATH:~/.npm-global/bin
+export PATH="$PATH:/home/david/BA/code-standards/org/scripts"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-    sudo
+git
+zsh-autosuggestions
 
 )
 
 source $ZSH/oh-my-zsh.sh
+source ~/.nix-profile/etc/profile.d/nix.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+# export EDITOR='vim'
+# else
+# export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run alias.
+#
+# Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-eval `dircolors ~/.dir_colors/dircolors`
 
 prompt_context() {}
 
-source /home/david/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source /home/david/zsh-interactive-cd.plugin.zsh
 # Bash script file
 #
-# Author:        Filipe L B Correia <filipelbc@gmail.com>
-# Last Change:   2019 Apr 16 11:00:36
+# Author: Filipe L B Correia <filipelbc@gmail.com>
+# Last Change: 2019 Apr 16 11:00:36
 #
-# About:         functions for directory listing after cd'ing
+# About: functions for directory listing after cd'ing
 
 #===============================================================================
 # Options:
 
-list_show_hidden=0  # don't show hidden files
+list_show_hidden=0 # don't show hidden files
 list_show_details=0 # don't show files' details
-list_show_sizes=0   # don't show files' sizes
+list_show_sizes=0 # don't show files' sizes
 
 if [ -n "$has_color" ]; then
-    list_color_normal="\033[0m"
-    list_color_line="\033[0m"
-    list_color_dir="\033[1;31m"
+list_color_normal="\033[0m"
+list_color_line="\033[0m"
+list_color_dir="\033[1;31m"
 fi
 
 #===============================================================================
 # Helpers:
 
 list_hidden () {
-    list_show_hidden=$(( 1 - $list_show_hidden ))
-    list
+list_show_hidden=$(( 1 - $list_show_hidden ))
+list
 }
 
 list_details () {
-    list_show_details=$(( 1 - $list_show_details ))
-    list
+list_show_details=$(( 1 - $list_show_details ))
+list
 }
 
 list_sizes () {
-    list_show_sizes=$(( 1 - $list_show_sizes ))
-    list
+list_show_sizes=$(( 1 - $list_show_sizes ))
+list
 }
 
 list_get_full_path () {
-    if [ -d "$1" ]; then
-        pushd "$1" >/dev/null
-        pwd
-        popd >/dev/null
-    fi
+if [ -d "$1" ]; then
+pushd "$1" >/dev/null
+pwd
+popd >/dev/null
+fi
 }
 
 list_print_line () {
-    c="─"
-    if [ "$#" -eq 1 ]; then
-        c=$1
-    fi
+c="─"
+if [ "$#" -eq 1 ]; then
+c=$1
+fi
 
-    echo -en $list_color_line
-    for i in $(seq 1 $COLUMNS); do echo -n $c; done
-    echo -e $list_color_normal
+echo -en $list_color_line
+for i in $(seq 1 $COLUMNS); do echo -n $c; done
+echo -e $list_color_normal
+
 }
 
 list_print_ls () {
-    o=""
+o=""
 
-    if [ $list_show_details -eq 1 ]; then
-        o="$o -lh"
-    elif [ $list_show_sizes -eq 1 ]; then
-        o="$o -sh"
-    fi
+if [ $list_show_details -eq 1 ]; then
+    o="$o -lh"
+elif [ $list_show_sizes -eq 1 ]; then
+    o="$o -sh"
+fi
 
-    if [ $list_show_hidden -eq 1 ]; then
-        o="$o -A"
-    fi
+if [ $list_show_hidden -eq 1 ]; then
+    o="$o -A"
+fi
 
-    ls $o "$1"
+ls $o "$1"
+
 }
 
 list_print_pwd () {
-    list_print_line
-    list_print_ls "$(pwd)"
+list_print_line
+list_print_ls "$(pwd)"
 }
 
 list_print_dir () {
-    list_print_line
-    p=$(list_get_full_path "$1")
-    echo -e $list_color_dir$p$list_color_normal
-    list_print_line "-"
-    list_print_ls "$p"
+list_print_line
+p=$(list_get_full_path "$1")
+echo -e $list_color_dir$p$list_color_normal
+list_print_line "-"
+list_print_ls "$p"
 }
 
 list_clear () {
-    echo -e '\033[H\033[2J'
+echo -e '\033[H\033[2J'
 }
 
 #===============================================================================
 # Main:
 
 list () {
-    list_clear
-    # list current directory if no argument is given
-    if [ "$#" -eq 0 ]; then
-        list_print_pwd
-    else
-        # list given directories
-        for dir in "$@"
-        do
-            if [ -d "$dir" ]; then
-                list_print_dir "$dir"
-            fi
-        done
-    fi
-    list_print_line
+list_clear
+# list current directory if no argument is given
+if [ "$#" -eq 0 ]; then
+list_print_pwd
+else
+# list given directories
+for dir in "$@"
+do
+if [ -d "$dir" ]; then
+list_print_dir "$dir"
+fi
+done
+fi
+list_print_line
 }
 
 # call after cd'ing
@@ -146,11 +238,12 @@ alias l='list'
 alias :hi='list_hidden'
 alias :de='list_details'
 alias :si='list_sizes'
-alias plantuml='java -jar ~/java/plantuml.jar'
+alias email='~/Downloads/thunderbird/thunderbird' -d 
+#alias hledger=' docker run --rm -v "$(pwd):/data" dastapov/hledger hledger' 
 
-###  AUTOJUMP  ###
-[[ -s /home/david/.autojump/etc/profile.d/autojump.sh ]] && source /home/david/.autojump/etc/profile.d/autojump.sh
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-autoload -U compinit && compinit -u
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
-##################
+alias ..='cd ..'
