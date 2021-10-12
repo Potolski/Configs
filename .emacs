@@ -29,9 +29,10 @@ There are two things you can do about this warning:
     ("e6ccd0cc810aa6458391e95e4874942875252cd0342efd5a193de92bfbb6416b" "d91ef4e714f05fff2070da7ca452980999f5361209e679ee988e3c432df24347" default)))
  '(fill-column 80)
  '(org-confirm-babel-evaluate nil)
+ '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (csharp-mode dart-mode indium plantuml-mode gandalf-theme sqlformat sqlup-mode sql-indent fsharp-mode solarized-theme)))
+    (ox-gfm csharp-mode dart-mode indium plantuml-mode gandalf-theme sqlformat sqlup-mode sql-indent fsharp-mode solarized-theme)))
  '(safe-local-variable-values
    (quote
     ((org-html-postamble-format
